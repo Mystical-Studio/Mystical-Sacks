@@ -1,5 +1,6 @@
 package MysticalSacks;
 
+import MysticalSacks.Listeners.SackListener;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -7,7 +8,9 @@ public final class MysticalSacks extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        Bukkit.getLogger().info("Hello there!");
+        getLogger().info("Mystical Sacks loaded!");
+
+        Bukkit.getPluginManager().registerEvents(new SackListener(this), this);
 
     }
 
@@ -16,4 +19,5 @@ public final class MysticalSacks extends JavaPlugin {
         // Plugin shutdown logic
         Bukkit.getLogger().info("Goodbye!");
     }
+
 }
