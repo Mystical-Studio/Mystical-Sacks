@@ -1,0 +1,30 @@
+# IntelliJ project files
+.idea/
+*.iml
+
+# Maven build directory
+/target/
+
+# Logs and temp files
+*.log
+*.tmp
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Java class files
+*.class
+
+# Eclipse project files (if ever used)
+.classpath
+.project
+.settings/
+
+# Minecraft test server (if you keep one locally)
+testserver/
+*.jar
+
+# Build tools
+/build/
+out/
