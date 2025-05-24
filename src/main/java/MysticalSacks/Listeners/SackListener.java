@@ -70,6 +70,24 @@ public class SackListener implements Listener {
 
     private void openMysticalSackGUI(Player player) {
         Inventory gui = Bukkit.createInventory(null, 36, ChatColor.DARK_PURPLE + "Mystical Sack");
+
+        ItemStack borderItem = new ItemStack(Material.BLACK_STAINED_GLASS_PANE);
+        ItemMeta meta = borderItem.getItemMeta();
+        meta.setDisplayName(" "); // Blank name so it looks clean
+        borderItem.setItemMeta(meta);
+
+        // Set border slots (0–35)
+        for (int slot = 0; slot < 36; slot++) {
+            boolean isTopRow = slot < 9;
+            boolean isBottomRow = slot >= 27;
+            boolean isLeftEdge = slot % 9 == 0;
+            boolean isRightEdge = slot % 9 == 8;
+
+            if (isTopRow || isBottomRow || isLeftEdge || isRightEdge) {
+                gui.setItem(slot, borderItem);
+            }
+        }
+
         player.openInventory(gui);
         player.playSound(player.getLocation(), Sound.BLOCK_CHEST_OPEN, 1f, 1f);
     }
