@@ -1,4 +1,4 @@
 name: Mystical-Sacks
 version: '1.0-SNAPSHOT'
-main: MysticalSacks
+main: MysticalSacks.MysticalSacks
 api-version: '1.21'
